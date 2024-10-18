@@ -1,7 +1,11 @@
-export default function Deck() {
+import Flashcard from "./Flashcard";
+
+export default function Deck({ deck }) {
   return (
     <>
-      <h2>Deck</h2>
+      {deck.map((flashcard, index) => (
+        <Flashcard key={index} {...flashcard} />
+      ))}
     </>
   );
 }
